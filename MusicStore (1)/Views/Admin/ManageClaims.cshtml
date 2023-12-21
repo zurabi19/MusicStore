@@ -1,0 +1,20 @@
+﻿@model ManageClaimsViewModel;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form method="post">
+    <input type="hidden" asp-for="UserId"></input>
+    @for(int i = 0; i < Model.UserClaims.Count; i++)
+    {
+        <input type="hidden" asp-for="UserClaims[i].ClaimType"></input>
+
+        <label>
+            <input type="checkbox" asp-for="UserClaims[i].IsSelected"></input>
+            @Model.UserClaims[i].ClaimType;
+        </label>
+    }
+
+    <input type="submit" value="Save"></input>
+</form>

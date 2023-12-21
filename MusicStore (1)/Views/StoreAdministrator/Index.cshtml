@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MusicStore__1_.Models.Album>
+@{
+}
+
+<a asp-action="Create">Create Album</a>
+<br></br>
+<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Artist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Price)
+            </th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Album album in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(Item => album.Genre.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(Item => album.Artist.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(Item => album.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(Item => album.Price)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@album.AlbumId">Edit</a>
+                    <a asp-action="Details" asp-route-id="@album.AlbumId">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

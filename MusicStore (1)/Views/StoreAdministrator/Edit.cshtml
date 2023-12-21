@@ -1,0 +1,33 @@
+﻿@model MusicStore__1_.Models.Album
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="AlbumId"></>
+    <div>
+        <label asp-for="GenreId"></label>
+        <select asp-for="GenreId" asp-items="ViewBag.GenreId"></select>
+    </div>
+    <div>
+        <label asp-for="ArtistId"></label>
+        <select asp-for="ArtistId" asp-items="ViewBag.ArtistId"></select>
+    </div>
+    <div>
+        <label asp-for="Title"></label>
+        <input asp-for="Title"></>
+    </div>
+    <div>
+        <label asp-for="Price"></label>
+        <input asp-for="Price"></>
+    </div>
+    <div>
+        <label asp-for="AlbumArtUrl"></label>
+        <input asp-for="AlbumArtUrl"></>
+    </div>
+    <div>
+        <input type="submit" value="Save"></>
+    </div>
+</form>

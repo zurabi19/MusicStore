@@ -1,0 +1,38 @@
+﻿@model MusicStore__1_.Models.Album
+@{
+}
+
+<h1>Create</h1>
+<h4>Album</h4>
+
+<div>
+    <form asp-action="Create">
+        <div>
+            <label asp-for="ArtistId" class="control-label"></label>
+            <select asp-for="ArtistId" class="form-control" asp-items="ViewBag.ArtistId"></select>
+        </div>
+        <div>
+            <label asp-for="GenreId" class="control-label"></label>
+            <select asp-for="GenreId" class="form-control" asp-items="ViewBag.GenreId"></select>
+        </div>
+        <div>
+            <label asp-for="Title" class="control-label"></label>
+            <input asp-for="Title" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="Price" class="control-label"></label>
+            <input asp-for="Price" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="AlbumArtUrl" class="control-label"></label>
+            <input asp-for="AlbumArtUrl" class="form-control" />
+        </div>
+        <div>
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
